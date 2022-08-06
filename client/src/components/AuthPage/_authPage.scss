@@ -1,0 +1,154 @@
+@import "../../styles/theme";
+
+.container-auth {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: $black-back;
+}
+
+.auth {
+    display: grid;
+    grid-template: 1fr auto 2fr/ 1fr auto 1fr;
+    height: 100vh;
+
+    &__content {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        display: grid;
+        grid-template: repeat(2, auto)/ auto;
+    }
+
+    &__nav {
+        grid-row: 1/2;
+        height: 40px;
+        max-width: 300px;
+        margin-bottom: 25px;
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: $gray-dark;
+            position: relative;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+        .auth__nav-in {
+            margin-right: 20px;
+        }
+
+        .navActive {
+            color: $white;
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                height: 2px;
+                background-color: $white;
+                top: 100%;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    &__card {
+        grid-row: 2/3;
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        width: 400px;
+        height: auto;
+        background-color: inherit;
+        color: $white;
+
+        @media (max-width: 767.98px) {
+            width: 300px;
+        }
+    }
+
+    &__message {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: $red;
+        max-width: 250px;
+        margin-bottom: 15px;
+    }
+
+    .success {
+        color: $green  !important;
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 20px;
+    }
+
+    &__email {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__password {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+
+    input {
+        margin-top: 13px;
+        height: 50px;
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 5px;
+        letter-spacing: 1.5px;
+        color: $gray-dark;
+        font-size: 20px;
+        font-weight: 600;
+
+        &:hover {
+            outline: 2px solid $gray;
+        }
+
+        &:focus {
+            outline: 2px solid $gray;
+        }
+    }
+
+    label {
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .auth__reg,
+    .auth__enter {
+        margin: 20px 0px 15px 0px;
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+        width: 100%;
+        min-height: 50px;
+        padding: 2px;
+        border: 3px solid $white;
+        border-radius: 6px;
+        background-color: inherit;
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: $gray;
+        }
+    }
+}

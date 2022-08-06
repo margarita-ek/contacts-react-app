@@ -1,0 +1,18 @@
+@import "../../../styles/theme";
+
+.list-contacts{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    max-height: 60vh;
+    min-height: auto;
+    min-width: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 2px solid $gray-dark;
+    padding: 10px 20px 20px 20px;
+    border-radius: 5px;
+    @media (max-width: 767.98px) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+}
